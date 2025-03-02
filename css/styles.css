@@ -1,0 +1,29 @@
+.bg-hero{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3)), url(../img/hero-background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.custom-class-1{
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0rem;}
+
+.custom-class-2{
+    gap:20px;}
+
+@media (max-width: 768px) { /* A partir de md (768px) */
+    .custom-class-2 {
+        gap: 5px;
+    }
+}
+
+.custom-class-3{
+    padding:13rem 0;}
+
+@media (max-width: 768px) { /* A partir de md (768px) */
+    .custom-class-3 {
+    padding: 10rem 2rem;}
+    }
+
+
+
