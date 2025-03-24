@@ -1,0 +1,23 @@
+@import '../variables';
+
+.faq main{
+    > div{
+        margin-top: 3rem;
+        > div{
+            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            @media (min-width: 992px) {
+                flex-wrap: nowrap;
+            }
+            @include flex-1(flex, null, null, center);
+            div:last-of-type{
+                div:last-of-type{
+                    div{
+                        background-color: $third-color;
+                    }
+                }
+            }
+        }
+    }
+}
