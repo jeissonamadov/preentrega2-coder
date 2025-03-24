@@ -1,0 +1,51 @@
+@mixin flex-1($display,$flex-direction,$align-items,$justify-content){
+    display:$display;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin container-fluid {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@mixin pg($a, $b: null, $axis: x) {
+    @if $b == null {
+        @if $axis == x {
+            padding-left: $a;
+            padding-right: $a;
+        } @else if $axis == y {
+            padding-top: $a;
+            padding-bottom: $a;
+        }
+    } @else {
+        padding-left: $a;
+        padding-right: $a;
+        padding-top: $b;
+        padding-bottom: $b;
+    }
+}
+
+@mixin mg($a, $b: null, $axis: x) {
+    @if $b == null {
+        @if $axis == x {
+            margin-left: $a;
+            margin-right: $a;
+        } @else if $axis == y {
+            margin-top: $a;
+            margin-bottom: $a;
+        }
+    } @else {
+        margin-left: $a;
+        margin-right: $a;
+        margin-top: $b;
+        margin-bottom: $b;
+    }
+}

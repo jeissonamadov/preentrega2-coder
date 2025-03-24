@@ -1,0 +1,49 @@
+@import '../variables';
+@import '../mixins';
+
+.btn{
+    @include pg(1rem, $axis: x)}
+
+.tienda main{
+    > section{
+        gap: 3rem;
+        text-align: center;
+        height: auto;
+        @include flex-1(flex, column, center, null);
+        @include mg(3rem, $axis: y);
+        @include container-fluid;
+
+        > div{
+            gap: 0.25rem;
+            row-gap: 3rem;
+            @include container-fluid;
+            @include flex-1(flex, column, null, space-evenly);
+            @media (min-width: 576px) { // Equivalente a "sm" en Bootstrap
+                flex-direction: row;  
+            }
+
+            > div{
+                transition: transform 0.2s ease-out;
+                &:hover {
+                    transform: scale(0.98);
+                }
+                @include flex-1(flex, column, center, null);
+                @include mg(0.5rem, $axis: x);
+                @media (min-width: 992px) {
+                    @include mg(1.5rem, $axis: x);
+                }
+
+                h3{
+                padding-top: 0.5rem;
+                }
+
+                h3, p{
+                @include pg(1rem, $axis: x)}
+
+                button{
+                margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}

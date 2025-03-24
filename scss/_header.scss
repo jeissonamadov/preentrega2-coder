@@ -1,0 +1,25 @@
+@import 'mixins';
+
+header{
+    @include pg(3rem, 0.5rem);
+    @include container-fluid;
+    background-color: $primary-color;
+
+    nav{
+        ul{
+            li{
+                transition: transform 0.3s ease-out;
+                &:hover {
+                    transform: scale(1.10);
+                }
+            }
+
+                a{ 
+                    color: $text-color;
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,100 @@
+@import '../variables';
+@import '../mixins';
+
+section {
+    @include container-fluid;
+}
+
+.btn{
+    @include pg(1rem, $axis: x)}
+
+.home main {
+    .bg-hero{ 
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3)), 
+        url(../../img/hero-background.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1.2s ease-out forwards;
+        @include flex-1(flex, column, center, center);
+
+        a{
+            color: $text-color-2;
+        }
+    }
+
+    .custom-class-3{
+        padding:13rem 0;
+        @media (max-width: 768px) { /* A partir de md (768px) */
+            padding: 10rem 2rem;
+        }
+    }
+
+    section:nth-of-type(2) {
+        text-align: center;
+        height: auto;
+        @include flex-1(flex, column, center, null);
+        @include mg(3rem, $axis: y);
+
+        > div{
+            @include container-fluid;
+            @include flex-1(flex, column, null, space-evenly);
+
+            > div{
+                transition: transform 0.2s ease-out;
+                &:hover {
+                    transform: scale(0.98);
+                }
+                @include flex-1(flex, column, center, null);
+                @include mg(0.5rem, $axis: x);
+                @media (min-width: 992px) {
+                    @include mg(1.5rem, $axis: x);
+                }
+
+                h3{
+                padding-top: 0.5rem;
+                }
+            
+                h3, p{
+                @include pg(1rem, $axis: x)}
+
+                button{
+                margin-bottom: 1.5rem;
+                }
+            }
+        }
+
+        a{
+        color: $text-color-2;}
+    }
+
+    section:nth-of-type(3) {
+        @include flex-1(flex, column-reverse, null, null);
+        @include pg(3rem, 3rem); // Por defecto en móviles (equivalente a py-5)
+        @media (min-width: 576px){
+        @include flex-1(flex, row, center, null);
+        }
+
+        > div:first-of-type{
+            text-align: center;
+            @include flex-1(flex, column, center, center);
+            
+            a{
+            color: $text-color-2;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

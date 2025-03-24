@@ -1,0 +1,14 @@
+@import '../variables';
+
+.contacto main{
+    > section{
+        @include flex-1(flex, row, null, null);
+        > div{
+            @include flex-1(flex, column, null, null);
+            
+            > div:last-of-type{
+                background-color: $third-color;
+            }
+        }
+    }
+}
